@@ -1,0 +1,17 @@
+PROGRAM_NAME='create_c_file'
+
+browser_name="google-chrome"
+run_gdbgui() {
+  local dir="$(whereis -b $browser_name)"
+  local browser_dir="${dir#"$browser_name: "}"
+
+  gdbgui -g "gdb --q" --browser "$browser_dir" --args ./$PROGRAM_NAME 
+}
+
+cd build
+
+if [ -e $PROGRAM_NAME ]; then
+  run_gdbgui
+else
+  echo "$PROGRAM_NAME not found. please run configure.sh then build.sh"
+fi

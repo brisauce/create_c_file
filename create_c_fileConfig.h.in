@@ -1,0 +1,17 @@
+#ifndef PROJECT_CONF_H
+#define PROJECT_CONF_H
+#include <stdlib.h>
+#define create_c_file_VERSION_MAJOR ${create_c_file_VERSION_MAJOR}
+#define create_c_file_VERSION_MINOR ${create_c_file_VERSION_MINOR}
+#define create_c_file_VERSION_PATCH ${create_c_file_VERSION_PATCH}
+
+#define PROJECT_NAME "${PROJECT_NAME}"
+#define ASSET_DIR "${PROJECT_SOURCE_DIR}/assets/"
+
+typedef struct {
+  char * buf;
+  size_t buf_size;
+}buffer;
+
+#define BUF_SIZE 1024
+#endif 
